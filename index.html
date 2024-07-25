@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MQTT Data</title>
+  <script>
+    let ws = new WebSocket('ws://localhost:8080');
+    
+    ws.onmessage = function(event) {
+      let message = event.data;
+      document.getElementById('mqtt-data').innerText = message;
+    };
+  </script>
+</head>
+<body>
+  <h1>MQTT Data</h1>
+  <p id="mqtt-data">Waiting for data...</p>
+</body>
+</html>
